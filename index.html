@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalrakshak - Water-Borne Disease Monitoring</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-tint"></i>
+                    <span>Jalrakshak</span>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="#report" class="nav-link">Report Issue</a></li>
+                    <li class="nav-item"><a href="#alerts" class="nav-link">Alerts</a></li>
+                    <li class="nav-item"><a href="#resources" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="#login" class="nav-link login-btn">Login</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Smart Community Health Monitoring</h1>
+            <p>Early warning system for water-borne diseases in Rural Northeast India</p>
+            <div class="hero-buttons">
+                <button class="btn primary" onclick="showReportModal()">Report Water Issue</button>
+                <button class="btn secondary" onclick="showIVRInfo()">IVR Health Line</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNDAwIDMwMCI+PHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9IiNmMGY3ZmYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIxNTAiIHI9IjcwIiBmaWxsPSIjMWE3M2U4Ii8+PHBhdGggZD0iTTE1MCAxMDBIMjUwVjIwMEgxNTBaIiBmaWxsPSIjZmZmIi8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTIwIiByPSIyMCIgZmlsbD0iI2YwZjdmZiIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjEyMCIgcj0iMjAiIGZpbGw9IiNmMGY3ZmYiLz48cGF0aCBkPSJNMTgwIDE3MEgyMjBWMjAwSDE4MFoiIGZpbGw9IiNmMGY3ZmYiLz48L3N2Zz4=" alt="Community Health Monitoring">
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <h2>Community Health Dashboard</h2>
+        <div class="dashboard-grid">
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Water Sources Monitored</h3>
+                <div class="metric-value">142</div>
+                <div class="metric-change positive">+5 this week</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-bacteria"></i>
+                </div>
+                <h3>Active Risk Alerts</h3>
+                <div class="metric-value">8</div>
+                <div class="metric-change negative">+2 today</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Community Reports</h3>
+                <div class="metric-value">67</div>
+                <div class="metric-change positive">+12 this week</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Prevented Outbreaks</h3>
+                <div class="metric-value">3</div>
+                <div class="metric-change">This month</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Map Section -->
+    <section class="risk-map">
+        <h2>Water Risk Map</h2>
+        <div class="map-container">
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color low-risk"></div>
+                    <span>Low Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color moderate-risk"></div>
+                    <span>Moderate Risk</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color high-risk"></div>
+                    <span>High Risk</span>
+                </div>
+            </div>
+            <div class="map-visual">
+                <div class="village low-risk" style="top: 30%; left: 20%;">Borpather</div>
+                <div class="village moderate-risk" style="top: 60%; left: 40%;">Sonajuli</div>
+                <div class="village high-risk" style="top: 45%; left: 70%;">Chota Merapani</div>
+                <div class="village low-risk" style="top: 75%; left: 25%;">Dighalia</div>
+                <div class="village low-risk" style="top: 20%; left: 65%;">Khumtai</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Report Section -->
+    <section id="report" class="report-section">
+        <h2>Report Water or Health Issue</h2>
+        <div class="report-options">
+            <div class="report-option" onclick="showReportModal()">
+                <div class="option-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>IVR System</h3>
+                <p>Call or use our interactive voice response system to report issues in your local language</p>
+                <div class="ivr-number"> toll-free: 1-800-JAL-RAKSHak</div>
+            </div>
+            <div class="report-option" onclick="showSMSModal()">
+                <div class="option-icon">
+                    <i class="fas fa-sms"></i>
+                </div>
+                <h3>SMS Reporting</h3>
+                <p>Send a text message with your location and issue</p>
+                <div class="sms-number">SMS: WATER (your location) to 773-829</div>
+            </div>
+            <div class="report-option" onclick="showWebReportModal()">
+                <div class="option-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Online Form</h3>
+                <p>Fill out our simple web form to report water quality or health issues</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alerts Section -->
+    <section id="alerts" class="alerts-section">
+        <h2>Recent Alerts</h2>
+        <div class="alerts-container">
+            <div class="alert-card high-alert">
+                <div class="alert-header">
+                    <h3>High Risk Alert</h3>
+                    <span class="alert-time">2 hours ago</span>
+                </div>
+                <p>High turbidity detected in Chota Merapani water source. Boil water before use.</p>
+                <div class="alert-actions">
+                    <button class="btn outline">Acknowledge</button>
+                    <button class="btn">View Details</button>
+                </div>
+            </div>
+            <div class="alert-card medium-alert">
+                <div class="alert-header">
+                    <h3>Medium Risk Alert</h3>
+                    <span class="alert-time">Yesterday</span>
+                </div>
+                <p>Multiple diarrhea cases reported in Sonajuli area. Water testing recommended.</p>
+                <div class="alert-actions">
+                    <button class="btn outline">Acknowledge</button>
+                    <button class="btn">View Details</button>
+                </div>
+            </div>
+            <div class="alert-card low-alert">
+                <div class="alert-header">
+                    <h3>Information</h3>
+                    <span class="alert-time">3 days ago</span>
+                </div>
+                <p>Water purification workshop scheduled in Borpather community center this Friday.</p>
+                <div class="alert-actions">
+                    <button class="btn outline">Remind Me</button>
+                    <button class="btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <h2>Health Resources</h2>
+        <div class="resources-grid">
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Prevention Guides</h3>
+                <p>Learn how to prevent water-borne diseases with our simple guides</p>
+                <a href="#" class="resource-link">View Guides <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3>Symptom Checker</h3>
+                <p>Identify potential water-borne disease symptoms and recommended actions</p>
+                <a href="#" class="resource-link">Check Symptoms <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="resource-card">
+                <div class="resource-icon">
+                    <i class="fas fa-hand-holding-water"></i>
+                </div>
+                <h3>Water Purification</h3>
+                <p>Methods to purify water at home with locally available resources</p>
+                <a href="#" class="resource-link">Learn More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Jalrakshak</h3>
+                <p>Smart Community Health Monitoring and Early Warning System for Water-Borne Diseases</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#report">Report Issue</a></li>
+                    <li><a href="#alerts">Alerts</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Emergency Contacts</h3>
+                <ul>
+                    <li>Health Worker: 98765-43210</li>
+                    <li>Water Testing: 98765-12345</li>
+                    <li>Emergency IVR: 1-800-JAL-HELP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Jalrakshak - For Rural Northeast India</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('reportModal')">&times;</span>
+            <h2>Report Water Issue</h2>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="location">Location/Village</label>
+                    <input type="text" id="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="issueType">Issue Type</label>
+                    <select id="issueType" required>
+                        <option value="">Select Issue Type</option>
+                        <option value="turbidity">Murky/Cloudy Water</option>
+                        <option value="smell">Bad Smell</option>
+                        <option value="taste">Strange Taste</option>
+                        <option value="sickness">Water-Related Sickness</option>
+                        <option value="other">Other Issue</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="contact">Contact (optional)</label>
+                    <input type="text" id="contact">
+                </div>
+                <button type="submit" class="btn primary">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="ivrModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ivrModal')">&times;</span>
+            <h2>IVR Health Line</h2>
+            <div class="ivr-info">
+                <p>Call our toll-free number to report issues in your local language:</p>
+                <div class="ivr-number-large">1-800-JAL-RAKSHak</div>
+                <p>Follow the voice prompts to:</p>
+                <ul>
+                    <li>Report water quality issues</li>
+                    <li>Report health symptoms</li>
+                    <li>Get prevention advice</li>
+                    <li>Connect with health workers</li>
+                </ul>
+                <p>Available in Assamese, Nagamese, Mizo, and English</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
